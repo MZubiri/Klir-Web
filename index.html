@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klir — Limpiador de Galería para Android | Swipe, Rápido y Privado</title>
+  <meta name="description" content="Limpia tu galería de Android deslizando fotos. Compara ráfagas, elimina duplicados y libera gigas de espacio. 100% privado en tu dispositivo, sin subir nada a la nube.">
+  <meta name="theme-color" content="#0B0D11">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Klir — Limpiador de Galería para Android">
+  <meta property="og:description" content="Desliza para conservar o eliminar. Compara ráfagas idénticas y libera espacio sin salir de tu dispositivo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.svg">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       Header
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" alt="Klir Icon" class="brand-icon">
+        <span>Klir</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Funciones</a></li>
+          <li><a href="#bursts" class="nav-link">Comparador de Ráfagas</a></li>
+          <li><a href="#privacy" class="nav-link">Privacidad</a></li>
+          <li><a href="#faq" class="nav-link">Preguntas Frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-primary">Descargar App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       Hero Section
+       ==================================================================== -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="pill-badge">
+          <span class="pill-dot"></span>
+          <span>Disponible para Android 11 a 15</span>
+        </div>
+
+        <h1 class="hero-title">
+          Tu galería limpia en minutos. Rápido, táctil y 100% privado.
+        </h1>
+
+        <p class="hero-subtitle">
+          El limpiador de fotos para Android con interfaz de deslizamiento. Conserva a la derecha, elimina a la izquierda, compara ráfagas idénticas y libera gigas de espacio sin que tus fotos salgan jamás de tu teléfono.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#download" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.5 3v18l14-9-14-9z M17 12l4 2.5-4 2.5v-5z"/>
+            </svg>
+            <span>Obtener en Google Play</span>
+          </a>
+          <a href="#demo" class="btn btn-secondary btn-lg">Probar Demo</a>
+        </div>
+
+        <div class="trust-row">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Procesamiento 100% en el dispositivo</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Confirmación segura antes de borrar</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Cero subidas a la nube</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Phone Mockup -->
+      <div class="phone-mockup-wrapper" id="demo">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          
+          <div class="app-screen">
+            <div class="app-screen-header">
+              <span class="app-badge-album" id="card-category">CÁMARA · OCTUBRE</span>
+              <span class="app-badge-trash" id="mockup-trash-count">🗑️ 0</span>
+            </div>
+
+            <!-- Swipe Card Stack -->
+            <div class="card-stack">
+              <div class="interactive-card" id="mockup-card">
+                <div class="card-image-box">
+                  <div class="card-sample-visual" id="card-icon">📸</div>
+                  <div class="card-stamp stamp-keep" id="stamp-keep">CONSERVAR ✓</div>
+                  <div class="card-stamp stamp-delete" id="stamp-delete">BORRAR ✗</div>
+                </div>
+                <div class="card-meta-bar">
+                  <span class="card-meta-title" id="card-title">IMG_20261028_01.jpg</span>
+                  <span class="card-meta-size" id="card-size">4.2 MB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Controls in Mockup -->
+            <div class="mockup-controls">
+              <button class="mockup-btn btn-del" id="mockup-btn-delete" title="Borrar (Deslizar izquierda)" aria-label="Borrar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              
+              <button class="mockup-btn btn-star" id="mockup-btn-star" title="Favorita (Deslizar arriba)" aria-label="Favorita">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </button>
+              
+              <button class="mockup-btn btn-keep" id="mockup-btn-keep" title="Conservar (Deslizar derecha)" aria-label="Conservar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Features Section (Bento Grid)
+       ==================================================================== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Diseño Enfocado</span>
+        <h2 class="section-title">Construida para limpiar sin perder el control</h2>
+        <p class="section-desc">
+          Olvida desplazarte por una cuadrícula interminable de miles de miniaturas minúsculas. Klir presenta cada recuerdo con la atención que merece.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Feature 1 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 16V4m0 0L3 8m4-4l4 4m6 4v12m0 0l4-4m-4 4l-4-4"/>
+              </svg>
+            </div>
+            <h3 class="bento-title">Gestos de Una Mano</h3>
+            <p class="bento-text">
+              Desliza a la derecha para conservar, a la izquierda para enviar a la cola de eliminación, o arriba para gestionar tus favoritas. Fluido y natural.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Bursts (Col span 2) -->
+        <div class="bento-card col-span-2" id="bursts">
+          <div>
+            <div class="bento-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="bento-title">Comparador de Ráfagas</h3>
+            <p class="bento-text">
+              ¿Tomaste 8 fotos del mismo momento para asegurarte de que nadie parpadeara? Klir las agrupa automáticamente en una tira horizontal. Haz zoom para comparar detalles y quédate únicamente con la mejor en un solo toque.
+            </p>
+          </div>
+          <div class="bento-preview">
+            <div class="burst-strip">
+              <div class="burst-thumb active">
+                <span>#1</span>
+                <span class="burst-badge-check">✓</span>
+              </div>
+              <div class="burst-thumb">
+                <span>#2</span>
+                <span class="burst-badge-cross">✗</span>
+              </div>
+              <div class="burst-thumb">
+                <span>#3</span>
+                <span class="burst-badge-cross">✗</span>
+              </div>
+              <div class="burst-thumb">
+                <span>#4</span>
+                <span class="burst-badge-cross">✗</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="bento-title">Filtros Temporales</h3>
+            <p class="bento-text">
+              Limpia mes a mes cronológicamente o ataca carpetas específicas: capturas de pantalla viejas, videos pesados (+50 MB) o álbumes de mensajería.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="bento-title">Reanuda Donde Te Quedaste</h3>
+            <p class="bento-text">
+              Si sales de la app, Klir recuerda exactamente tu posición y conserva intacta tu cola de archivos pendientes. Nada de empezar desde cero cada vez.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="bento-title">Papelera con Confirmación</h3>
+            <p class="bento-text">
+              Ninguna foto se borra accidentalmente. Antes de la eliminación final, revisas tu papelera y el sistema oficial de Android solicita tu autorización explícita.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Privacy Section
+       ==================================================================== -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Seguridad Real</span>
+        <h2 class="section-title">Tus fotos son tuyas. Punto.</h2>
+        <p class="section-desc">
+          En una época donde todo se envía a la nube para entrenar modelos, Klir funciona de manera estrictamente local y privada.
+        </p>
+      </div>
+
+      <div class="privacy-box">
+        <div>
+          <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px;">Arquitectura On-Device</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Klir utiliza las APIs oficiales de <code>MediaStore</code> de Android. No requiere permisos peligrosos de gestión total de almacenamiento (<code>MANAGE_EXTERNAL_STORAGE</code>) ni acceso a tus archivos personales fuera de la galería.
+          </p>
+          <a href="privacy.html" class="btn btn-secondary">Leer Política de Privacidad Completa →</a>
+        </div>
+
+        <ul class="privacy-list">
+          <li class="privacy-item">
+            <span class="privacy-bullet">✓</span>
+            <div class="privacy-item-text">
+              <strong>Cero Servidores Externos</strong>
+              No tenemos servidores donde subir tus fotos. No hay copias ocultas ni telemetría fotográfica.
+            </div>
+          </li>
+          <li class="privacy-item">
+            <span class="privacy-bullet">✓</span>
+            <div class="privacy-item-text">
+              <strong>Sin Cuentas ni Registros Obligatorios</strong>
+              Instalas la app, abres y comienzas a limpiar. Sin correos electrónicos, contraseñas ni números de teléfono.
+            </div>
+          </li>
+          <li class="privacy-item">
+            <span class="privacy-bullet">✓</span>
+            <div class="privacy-item-text">
+              <strong>Funciona 100% Sin Conexión</strong>
+              Puedes poner tu teléfono en Modo Avión y Klir funcionará con exactamente la misma velocidad.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       FAQ Section
+       ==================================================================== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dudas Habituales</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <button class="faq-header">
+            <span>¿Mis fotos se borran de inmediato cuando deslizo a la izquierda?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            No. Cuando deslizas a la izquierda, la foto solo se añade a la <strong>cola de eliminación</strong>. Puedes seguir deslizando tranquilamente. Al finalizar la sesión, entras a la papelera, revisas el resumen de gigas a liberar, y el cuadro de diálogo oficial del sistema Android te pide confirmación definitiva.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header">
+            <span>¿Qué versiones de Android son compatibles?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            Klir es compatible con Android 11 (API 30), Android 12, Android 13, Android 14 y Android 15 (API 35), aprovechando las protecciones de privacidad modernas de Scoped Storage.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header">
+            <span>¿Cómo funciona el comparador de ráfagas?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            Klir detecta automáticamente fotos tomadas con diferencias de milisegundos o segundos en un mismo momento. En lugar de mostrártelas una por una, te las presenta en una tira secuencial donde puedes alternar entre ellas, hacer zoom de hasta 3.5x para comprobar la nitidez de los rostros y elegir exactamente cuál conservar.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-header">
+            <span>¿Tiene anuncios o suscripciones periódicas?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            Klir no tiene anuncios invasivos ni banners que interrumpan tu experiencia. La versión Pro se ofrece como un pago único de por vida (lifetime), sin suscripciones recurrentes ni cobros sorpresa.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       CTA Section
+       ==================================================================== -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Recupera gigas de almacenamiento hoy</h2>
+        <p class="cta-text">
+          Descarga Klir en tu teléfono Android y mantén tu carrete limpio, ordenado y ligero en pocos minutos al día.
+        </p>
+        <div style="margin-top: 10px;">
+          <a href="#" class="btn btn-primary btn-lg" style="height: 52px; padding: 0 28px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.5 3v18l14-9-14-9z M17 12l4 2.5-4 2.5v-5z"/>
+            </svg>
+            <span>Descargar desde Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       Footer
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Klir Icon" style="width: 24px; height: 24px;">
+        <span style="font-size: 16px;">Klir</span>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="privacy.html" class="footer-link">Política de Privacidad</a></li>
+        <li><a href="terms.html" class="footer-link">Términos de Uso</a></li>
+        <li><a href="https://github.com/MZubiri/Klir-Web" class="footer-link" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+
+      <div>
+        <span>© 2026 Klir. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

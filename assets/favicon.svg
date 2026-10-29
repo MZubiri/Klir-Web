@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#16191F"/>
+  <rect x="0.5" y="0.5" width="47" height="47" rx="11.5" stroke="#272C35"/>
+  <!-- Primary Cleaning Spark -->
+  <path d="M24 10L26 19L35 21L26 23L24 32L22 23L13 21L22 19Z" fill="#3B82F6"/>
+  <!-- Secondary Spark -->
+  <path d="M33 12L34 16L38 17L34 18L33 22L32 18L28 17L32 16Z" fill="#22C55E"/>
+  <!-- Small Accent Spark -->
+  <path d="M15 28L16 31L19 32L16 33L15 36L14 33L11 32L14 31Z" fill="#E2E8F0"/>
+</svg>

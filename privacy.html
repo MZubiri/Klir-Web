@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — Klir</title>
+  <meta name="description" content="Política de Privacidad oficial de Klir para Android. Conoce cómo protegemos tus fotos y datos con procesamiento 100% en tu dispositivo.">
+  <meta name="theme-color" content="#0B0D11">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" alt="Klir Icon" class="brand-icon">
+        <span>Klir</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Legal Content -->
+  <main class="container legal-page">
+    <header class="legal-header">
+      <h1 class="legal-title">Política de Privacidad</h1>
+      <div class="legal-updated">Última actualización: 28 de octubre de 2026</div>
+    </header>
+
+    <div class="legal-content">
+      <div class="legal-callout">
+        <strong>Resumen esencial:</strong> Klir es una herramienta de limpieza local para Android. Todas tus fotos y videos se analizan, organizan y visualizan <strong>exclusivamente en tu dispositivo</strong>. Klir jamás sube, almacena, copia ni comparte tus archivos multimedia con servidores externos.
+      </div>
+
+      <h2>1. Compromiso de Privacidad</h2>
+      <p>
+        Esta Política de Privacidad describe cómo <strong>Klir</strong> ("la Aplicación", "nosotros") trata la información cuando utilizas nuestra aplicación móvil para Android. Tu privacidad es un principio fundamental de diseño en Klir, no una función secundaria.
+      </p>
+
+      <h2>2. Permisos del Dispositivo y Uso de Medios</h2>
+      <p>
+        Para cumplir con su propósito de organizar y limpiar tu galería, Klir solicita los siguientes permisos específicos a través del sistema operativo Android:
+      </p>
+      <ul>
+        <li>
+          <strong><code>READ_MEDIA_IMAGES</code> y <code>READ_MEDIA_VIDEO</code> (Android 13 y superior / API 33+)</strong>: Permite a la aplicación leer los metadatos y mostrar las imágenes y videos almacenados en tu dispositivo para que puedas revisarlos y compararlos.
+        </li>
+        <li>
+          <strong><code>READ_EXTERNAL_STORAGE</code> (Android 11 y 12 / API 30 a 32)</strong>: Con limitación a archivos multimedia mediante Scoped Storage en versiones anteriores.
+        </li>
+        <li>
+          <strong><code>POST_NOTIFICATIONS</code></strong>: Opcional, utilizado exclusivamente para enviarte recordatorios periódicos de limpieza en caso de que actives dicha opción en los ajustes.
+        </li>
+      </ul>
+      <p>
+        Klir <strong>no solicita ni utiliza</strong> el permiso de administración total de almacenamiento (<code>MANAGE_EXTERNAL_STORAGE</code>), garantizando que la aplicación únicamente tiene visibilidad sobre tus contenidos multimedia estándar gestionados por el proveedor del sistema (<code>MediaStore</code>).
+      </p>
+
+      <h2>3. Tratamiento y Eliminación de Archivos</h2>
+      <p>
+        Klir no elimina ningún archivo de manera autónoma ni silenciosa:
+      </p>
+      <ul>
+        <li>Cuando deslizas una foto a la izquierda, el elemento se añade a una <strong>cola temporal local</strong> en la memoria de la aplicación.</li>
+        <li>Para hacer efectiva la eliminación, la aplicación utiliza las APIs oficiales y seguras del sistema Android (<code>MediaStore.createTrashRequest</code> o <code>MediaStore.createDeleteRequest</code>).</li>
+        <li>El sistema operativo Android presenta una ventana de diálogo nativa donde debes confirmar explícitamente la acción antes de que cualquier archivo sea trasladado a la papelera o suprimido.</li>
+      </ul>
+
+      <h2>4. Servicios de Terceros y Telemetría</h2>
+      <p>
+        Klir integra un conjunto mínimo de servicios de confianza exclusivamente para garantizar la estabilidad técnica y gestionar compras dentro de la aplicación:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Play Billing (Google LLC)</strong>: Gestiona las transacciones de compra de la versión Pro. Los datos de pago (tarjetas bancarias, facturación) son procesados directamente por Google Play en sus servidores seguros; Klir nunca tiene acceso a tus datos financieros.
+        </li>
+        <li>
+          <strong>Google Firebase Crashlytics y Analytics (Google LLC)</strong>: Recopila métricas técnicas anónimas de rendimiento (como modelos de dispositivo, versión del sistema operativo y registros de cierres inesperados) para ayudarnos a identificar y corregir errores de programación. Estos registros técnicos no contienen imágenes, nombres de archivos personales ni datos biométricos.
+        </li>
+      </ul>
+
+      <h2>5. Almacenamiento y Seguridad de los Datos</h2>
+      <p>
+        Las preferencias de la aplicación (como el álbum seleccionado, el estado de compra Pro y el contador de archivos procesados) se guardan localmente en tu teléfono mediante <code>Jetpack DataStore</code> cifrado por el sistema operativo. Si desinstalas la aplicación o borras sus datos desde los ajustes de Android, toda la información local se elimina por completo.
+      </p>
+
+      <h2>6. Derechos del Usuario y Revocación</h2>
+      <p>
+        Tienes el control absoluto sobre tus datos en todo momento:
+      </p>
+      <ul>
+        <li>Puedes revocar los permisos de acceso a fotos y videos en cualquier momento desde <em>Ajustes de Android &gt; Aplicaciones &gt; Klir &gt; Permisos</em>.</li>
+        <li>Puedes restablecer el historial y la cola de archivos pendientes directamente desde la pantalla de ajustes de la aplicación.</li>
+      </ul>
+
+      <h2>7. Contacto</h2>
+      <p>
+        Si tienes preguntas o comentarios acerca de esta Política de Privacidad o del tratamiento de datos en Klir, puedes ponerte en contacto con el equipo de desarrollo a través de:
+      </p>
+      <p>
+        <strong>Correo electrónico de soporte:</strong> <a href="mailto:soporte@klir-app.com" style="color: var(--accent-blue);">soporte@klir-app.com</a><br>
+        <strong>Repositorio del proyecto:</strong> <a href="https://github.com/MZubiri/Klir-Web" target="_blank" rel="noopener" style="color: var(--accent-blue);">github.com/MZubiri/Klir-Web</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Klir Icon" style="width: 24px; height: 24px;">
+        <span style="font-size: 16px;">Klir</span>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="index.html" class="footer-link">Inicio</a></li>
+        <li><a href="terms.html" class="footer-link">Términos de Uso</a></li>
+      </ul>
+
+      <div>
+        <span>© 2026 Klir. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
