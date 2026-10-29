@@ -1,5 +1,6 @@
 /* ==========================================================================
    KLIR WEB — Minimalist, Solid Tech Design (Zero AI Gradients)
+   Human-focused, high contrast, clean typography.
    ========================================================================== */
 
 :root {
@@ -130,7 +131,7 @@ button {
 }
 
 /* ==========================================================================
-   Buttons & Badges (Solid & Crisp)
+   Buttons & Badges
    ========================================================================== */
 .btn {
   display: inline-flex;
@@ -197,36 +198,36 @@ button {
    Hero Section
    ========================================================================== */
 .hero-section {
-  padding: 80px 0 60px;
+  padding: 70px 0 50px;
   border-bottom: 1px solid var(--border-color);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
   align-items: center;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
 .hero-title {
-  font-size: 52px;
-  line-height: 1.08;
+  font-size: 50px;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   font-weight: 800;
   color: var(--text-main);
 }
 
 .hero-subtitle {
-  font-size: 19px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.55;
   color: var(--text-muted);
-  max-width: 540px;
+  max-width: 530px;
 }
 
 .hero-cta {
@@ -234,14 +235,14 @@ button {
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .trust-row {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid var(--border-color);
 }
 
@@ -250,7 +251,7 @@ button {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -258,22 +259,25 @@ button {
   width: 16px;
   height: 16px;
   color: var(--accent-blue);
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
-   Interactive Phone Frame / Mockup (Solid borders, zero blur)
+   Interactive Phone Frame / Real Photo Mockup
    ========================================================================== */
-.phone-mockup-wrapper {
+.phone-mockup-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .phone-mockup {
-  width: 320px;
+  width: 330px;
   height: 620px;
   background-color: #000000;
   border: 10px solid #232732;
-  border-radius: 40px;
+  border-radius: 42px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 0 1px #333846;
@@ -282,16 +286,16 @@ button {
 }
 
 .phone-notch {
-  width: 90px;
-  height: 18px;
+  width: 96px;
+  height: 20px;
   background-color: #232732;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  z-index: 10;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 20;
 }
 
 .app-screen {
@@ -299,7 +303,7 @@ button {
   background-color: #0E1117;
   display: flex;
   flex-direction: column;
-  padding: 24px 16px 16px;
+  padding: 26px 14px 14px;
   position: relative;
   user-select: none;
 }
@@ -308,7 +312,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  padding: 0 4px;
 }
 
 .app-badge-album {
@@ -316,9 +321,11 @@ button {
   font-weight: 600;
   background-color: #1A1F29;
   border: 1px solid #2A303C;
-  color: #CBD5E1;
+  color: #E2E8F0;
   padding: 4px 10px;
   border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .app-badge-trash {
@@ -327,86 +334,122 @@ button {
   background-color: #2B1517;
   border: 1px solid #451B1E;
   color: #EF4444;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
 }
 
-/* The Swipe Card in Mockup */
+/* Stack Cards */
 .card-stack {
   flex: 1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
-.interactive-card {
+/* Background Card (visible beneath active card) */
+.card-background {
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  border-radius: 18px;
+  background-color: #161A22;
+  border: 1px solid #282E3B;
+  transform: scale(0.93) translateY(12px);
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.card-background-img {
   width: 100%;
   height: 100%;
-  max-height: 380px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  filter: grayscale(40%);
+}
+
+/* Active Interactive Card */
+.interactive-card {
+  position: relative;
+  width: 100%;
+  height: 380px;
   background-color: #1A1E27;
   border: 1px solid #2C3240;
   border-radius: 18px;
   overflow: hidden;
-  position: relative;
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease;
   cursor: grab;
+  touch-action: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .interactive-card:active {
   cursor: grabbing;
 }
 
-.card-image-box {
+.card-photo {
   flex: 1;
-  background-color: #242A36;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1F2430;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.card-sample-visual {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1F2430;
-  color: #64748B;
-  font-size: 48px;
+/* Photo bottom shade for metadata text readability */
+.card-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+  pointer-events: none;
 }
 
 .card-stamp {
   position: absolute;
-  top: 20px;
+  top: 18px;
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   border-radius: 8px;
   letter-spacing: 0.05em;
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.1s ease;
   pointer-events: none;
+  z-index: 10;
 }
 
 .stamp-keep {
-  left: 20px;
+  left: 18px;
   background-color: var(--accent-green);
   color: #000000;
 }
 
 .stamp-delete {
-  right: 20px;
+  right: 18px;
   background-color: var(--accent-red);
   color: #FFFFFF;
 }
 
+.stamp-star {
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  background-color: var(--accent-star);
+  color: #000000;
+}
+
 .card-meta-bar {
+  position: relative;
+  z-index: 5;
   padding: 12px 14px;
   background-color: #14171E;
   border-top: 1px solid #232732;
@@ -416,29 +459,72 @@ button {
 }
 
 .card-meta-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .card-meta-size {
-  font-size: 11px;
+  font-size: 12px;
   font-family: var(--font-mono);
-  color: #94A3B8;
+  font-weight: 600;
+  color: var(--accent-blue);
+  background-color: #1E2738;
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
-/* Mockup Action Controls */
+/* Completion Screen in Mockup */
+.mockup-completed {
+  position: absolute;
+  inset: 0;
+  background-color: #0E1117;
+  z-index: 15;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.mockup-completed.active {
+  display: flex;
+}
+
+.completed-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.completed-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.completed-stat {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* Controls */
 .mockup-controls {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 16px;
-  padding: 0 10px;
+  margin-top: 14px;
+  padding: 0 16px;
 }
 
 .mockup-btn {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -448,8 +534,8 @@ button {
   transition: all 0.15s ease;
 }
 
-.mockup-btn:hover {
-  transform: scale(1.08);
+.mockup-btn:active {
+  transform: scale(0.92);
 }
 
 .mockup-btn.btn-del {
@@ -476,18 +562,38 @@ button {
   border-color: #22C55E;
 }
 
+.demo-instruction {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.demo-btn-reset {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.demo-btn-reset:hover {
+  color: #FFFFFF;
+}
+
 /* ==========================================================================
-   Section: Bento Grid Features (Crisp, High-Contrast Solid Cards)
+   Section: Bento Grid Features
    ========================================================================== */
 .section {
-  padding: 80px 0;
+  padding: 75px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
 .section-header {
   text-align: center;
-  max-width: 640px;
-  margin: 0 auto 56px;
+  max-width: 620px;
+  margin: 0 auto 52px;
 }
 
 .section-tag {
@@ -496,16 +602,16 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent-blue);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--text-main);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-desc {
@@ -549,14 +655,14 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--text-main);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .bento-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--text-main);
 }
 
@@ -567,11 +673,11 @@ button {
 }
 
 .bento-preview {
-  margin-top: 24px;
+  margin-top: 20px;
   background-color: var(--bg-inset);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 16px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -597,11 +703,12 @@ button {
   font-size: 11px;
   font-weight: 700;
   color: #94A3B8;
+  background-size: cover;
+  background-position: center;
 }
 
 .burst-thumb.active {
   border: 2px solid var(--accent-blue);
-  background-color: #1A2333;
   color: #FFFFFF;
 }
 
@@ -609,12 +716,12 @@ button {
   position: absolute;
   top: 4px;
   right: 4px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: var(--accent-green);
   color: #000;
-  font-size: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,12 +732,12 @@ button {
   position: absolute;
   top: 4px;
   right: 4px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: var(--accent-red);
   color: #FFF;
-  font-size: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -638,16 +745,16 @@ button {
 }
 
 /* ==========================================================================
-   Section: Privacy & Security (Crucial for Play Store Policy)
+   Section: Privacy (Clean, Non-Technical)
    ========================================================================== */
 .privacy-box {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 44px;
+  padding: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 36px;
 }
 
 .privacy-list {
@@ -664,8 +771,8 @@ button {
 }
 
 .privacy-bullet {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background-color: var(--accent-green-bg);
   border: 1px solid var(--accent-green);
@@ -716,13 +823,13 @@ button {
 }
 
 .faq-header {
-  padding: 20px 24px;
+  padding: 18px 22px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-main);
 }
@@ -739,7 +846,7 @@ button {
 }
 
 .faq-body {
-  padding: 0 24px 20px;
+  padding: 0 22px 18px;
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
@@ -757,25 +864,25 @@ button {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 56px 32px;
+  padding: 50px 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .cta-title {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--text-main);
 }
 
 .cta-text {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-muted);
-  max-width: 520px;
+  max-width: 500px;
 }
 
 /* ==========================================================================
@@ -785,7 +892,7 @@ button {
   margin-top: auto;
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-main);
-  padding: 48px 0;
+  padding: 44px 0;
   font-size: 13px;
   color: var(--text-dim);
 }
@@ -795,7 +902,7 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 
 .footer-nav {
@@ -823,13 +930,13 @@ button {
 }
 
 .legal-header {
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 24px;
+  padding-bottom: 20px;
 }
 
 .legal-title {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
@@ -843,17 +950,17 @@ button {
 .legal-content {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
   font-size: 15px;
   line-height: 1.7;
   color: #CBD5E1;
 }
 
 .legal-content h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #FFFFFF;
-  margin-top: 16px;
+  margin-top: 14px;
   letter-spacing: -0.02em;
 }
 
@@ -887,7 +994,7 @@ button {
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     text-align: center;
   }
   .hero-content {
@@ -915,13 +1022,13 @@ button {
 
 @media (max-width: 640px) {
   .hero-title {
-    font-size: 38px;
+    font-size: 36px;
   }
   .nav-links {
     display: none;
   }
   .phone-mockup {
-    width: 290px;
-    height: 570px;
+    width: 295px;
+    height: 580px;
   }
 }
